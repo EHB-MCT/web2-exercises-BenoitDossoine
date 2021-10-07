@@ -1,4 +1,7 @@
 "use strict";
+
+import Team from "./Team.js";
+
 let pokemon = [];
 
 function fetchPokemon() {
@@ -36,8 +39,12 @@ window.onload = function () {
                             <div class="pokemonTypes">
                                 ${typeDiv}  
                             </div>
+                            <button class="addBtn" id="btn${element.id}">Add to team</button>
                         </div>`;
             document.getElementById("pokemonList").innerHTML += pokemonTile;
         });
+
+        let team = new Team();
+        team.describeTeam();
     }
 };
