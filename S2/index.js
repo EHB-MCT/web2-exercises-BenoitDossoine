@@ -21,6 +21,8 @@ window.onload = function () {
     fetchPokemon();
     window.setTimeout(displayPokemon, 3000);
 
+    let team = new Team();
+
     function displayPokemon() {
         pokemon.sort((a, b) => a.id - b.id);
         pokemon.forEach(element => {
@@ -44,7 +46,27 @@ window.onload = function () {
             document.getElementById("pokemonList").innerHTML += pokemonTile;
         });
 
-        let team = new Team();
-        team.describeTeam();
+        let buttons = document.getElementsByClassName("addBtn");
+        for (let button of buttons) {
+            button.addEventListener("click", () => {
+                addPokemon(button.id);
+            });
+        }
+
+        function addPokemon(id) {
+
+            id = id.substring(3);
+            let chosenPokemon = pokemon[id - 1];
+            if (team.roster.length > 5) {
+                document.getElementById("messages").innerHTML = "A team can only contain 6 pokemon";
+            } else if (team.roster.find(element => element == chosenPokemon.name) != undefined) {
+                document.getElementById("messages").innerHTML = "A pokemon can only be chosen once!";
+            } else {
+                team.roster.push(chosenPokemon.name);
+                document.getElementById("team").innerHTML = team.describeTeam();
+                document.getElementById("messages").innerHTML = "Pokemon added succesfully to the team!";
+            }
+
+        }
     }
 };
