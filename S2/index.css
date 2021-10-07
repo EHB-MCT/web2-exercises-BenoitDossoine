@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 section#pokemonList {
@@ -9,17 +9,30 @@ section#pokemonList {
     flex-direction: row;
     flex-wrap: wrap;
     margin: auto;
-
 }
+
 
 div.pokemonItem {
     width: 25%;
+    padding: 2% 1%;
+    box-sizing: border-box;
 }
+
+
 
 img.pokemonImg {
     width: 100%;
+    background-color: rgba(128, 128, 128, 0.2);
 }
 
 p.pokemonNr {
     font-size: 10pt;
+    font-weight: 100;
+    margin: 0;
+}
+
+p.pokemonName {
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0.4em 0;
 }
