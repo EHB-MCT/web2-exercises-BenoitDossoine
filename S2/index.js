@@ -21,6 +21,11 @@ window.onload = function () {
     fetchPokemon();
     window.setTimeout(displayPokemon, 3000);
 
+    let listBtn = document.getElementById("listLink");
+    listBtn.addEventListener("click", () => showList());
+    let teamBtn = document.getElementById("teamLink");
+    teamBtn.addEventListener("click", () => showTeam());
+
     let team = new Team();
 
     function displayPokemon() {
@@ -57,6 +62,7 @@ window.onload = function () {
             id = id.substring(3);
             let chosenPokemon = pokemon[id - 1];
             let chosenPokemonName = chosenPokemon.name.charAt(0).toUpperCase() + chosenPokemon.name.slice(1).toLowerCase();
+            document.getElementById("messages").style.display = "block";
             if (team.roster.length > 5) {
                 document.getElementById("messages").innerHTML = "A team can only contain 6 pokemon!";
                 document.getElementById("messages").removeAttribute("class");
@@ -66,12 +72,24 @@ window.onload = function () {
                 document.getElementById("messages").removeAttribute("class");
                 document.getElementById("messages").classList.add("addFail");
             } else {
-                team.roster.push(chosenPokemonName);
+                team.roster.push(chosenPokemon);
                 document.getElementById("team").innerHTML = team.describeTeam();
                 document.getElementById("messages").innerHTML = `${chosenPokemonName} added succesfully to the team!`;
                 document.getElementById("messages").removeAttribute("class");
                 document.getElementById("messages").classList.add("addSucces");
             }
         }
+    }
+
+    function showList() {
+        document.getElementById("team").style.display = "none";
+        document.getElementById("messages").style.display = "none";
+        document.getElementById("pokemonList").style.display = "flex";
+    }
+
+    function showTeam() {
+        document.getElementById("team").style.display = "flex";
+        document.getElementById("messages").style.display = "none";
+        document.getElementById("pokemonList").style.display = "none";
     }
 };

@@ -53,7 +53,7 @@ section#pokemonList {
 
 section#team {
     width: 90%;
-    display: flex;
+    display: none;
     flex-direction: row;
     flex-wrap: wrap;
     margin: auto;
@@ -64,6 +64,23 @@ section#team {
 
 #team div {
     text-align: center;
+}
+
+#teamDescription {
+    width: 100%;
+}
+
+#teamComposition {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+div.teamMember {
+    width: 33%;
+    padding: 2% 1%;
+    box-sizing: border-box;
 }
 
 div.pokemonItem {
