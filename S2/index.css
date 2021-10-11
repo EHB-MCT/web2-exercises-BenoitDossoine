@@ -3,6 +3,27 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+section#messages {
+    width: 50%;
+    text-align: center;
+    margin: 10px auto;
+    padding: 1em 2em;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+#messages.addSucces {
+    color: #4CAF50;
+    border: #4CAF50 4px solid;
+    border-color: #4CAF50;
+}
+
+#messages.addFail {
+    color: #f44336;
+    border: #f44336 4px solid;
+    border-color: #f44336;
+}
+
 section#pokemonList {
     width: 90%;
     display: flex;

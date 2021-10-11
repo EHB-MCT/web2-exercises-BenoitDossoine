@@ -56,14 +56,21 @@ window.onload = function () {
         function addPokemon(id) {
             id = id.substring(3);
             let chosenPokemon = pokemon[id - 1];
+            let chosenPokemonName = chosenPokemon.name.charAt(0).toUpperCase() + chosenPokemon.name.slice(1).toLowerCase();
             if (team.roster.length > 5) {
-                document.getElementById("messages").innerHTML = "A team can only contain 6 pokemon";
-            } else if (team.roster.find(element => element == chosenPokemon.name) != undefined) {
-                document.getElementById("messages").innerHTML = "A pokemon can only be chosen once!";
+                document.getElementById("messages").innerHTML = "A team can only contain 6 pokemon!";
+                document.getElementById("messages").removeAttribute("class");
+                document.getElementById("messages").classList.add("addFail");
+            } else if (team.roster.find(element => element == chosenPokemonName) != undefined) {
+                document.getElementById("messages").innerHTML = `${chosenPokemonName} is already part of your team!`;
+                document.getElementById("messages").removeAttribute("class");
+                document.getElementById("messages").classList.add("addFail");
             } else {
-                team.roster.push(chosenPokemon.name);
+                team.roster.push(chosenPokemonName);
                 document.getElementById("team").innerHTML = team.describeTeam();
-                document.getElementById("messages").innerHTML = "Pokemon added succesfully to the team!";
+                document.getElementById("messages").innerHTML = `${chosenPokemonName} added succesfully to the team!`;
+                document.getElementById("messages").removeAttribute("class");
+                document.getElementById("messages").classList.add("addSucces");
             }
         }
     }
