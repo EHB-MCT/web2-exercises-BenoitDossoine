@@ -36,7 +36,7 @@ window.onload = function () {
             });
             let pokemonTile = `<div class="pokemonItem">
                             <img class="pokemonImg" src="${element.sprites.front_default}" alt="${element.name}">
-                            <p class="pokemonNr">${element.id}</p>
+                            <p class="pokemonNr">Nr. ${element.id}</p>
                             <p class="pokemonName">${element.name}</p>
                             <div class="pokemonTypes">
                                 ${typeDiv}  
@@ -54,7 +54,6 @@ window.onload = function () {
         }
 
         function addPokemon(id) {
-
             id = id.substring(3);
             let chosenPokemon = pokemon[id - 1];
             if (team.roster.length > 5) {
@@ -66,7 +65,6 @@ window.onload = function () {
                 document.getElementById("team").innerHTML = team.describeTeam();
                 document.getElementById("messages").innerHTML = "Pokemon added succesfully to the team!";
             }
-
         }
     }
 };
