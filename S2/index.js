@@ -77,7 +77,16 @@ window.onload = function () {
                 document.getElementById("messages").innerHTML = `${chosenPokemonName} added succesfully to the team!`;
                 document.getElementById("messages").removeAttribute("class");
                 document.getElementById("messages").classList.add("addSucces");
+                for (let item of document.getElementsByClassName("deleteBtn")) {
+                    item.addEventListener("click",()=>deletePokemon(item.id.substring(6)));
+                }
+                // document.getElementsByClassName("deleteBtn").forEach((btn,index) => btn.addEventListener("click",deletePokemon(index)));
             }
+        }
+
+        function deletePokemon(id) {
+            team.roster.splice(id, 1);
+            document.getElementById("team").innerHTML = team.describeTeam();
         }
     }
 

@@ -9,10 +9,9 @@ class Team {
     describeTeam() {
         let description = `This is team ${this.teamname} by trainer ${this.trainer}:`;
         let team = "";
-        this.roster.forEach(pokemon => {
+        this.roster.forEach((pokemon,index) => {
             let pokemonType = [];
             let typeDiv = "";
-            console.log(pokemon.types);
             pokemon.types.forEach(type => {
                 pokemonType.push(type.type.name);
             });
@@ -26,6 +25,7 @@ class Team {
             <div class="pokemonTypes">
                 ${typeDiv}  
             </div>
+            <button class="deleteBtn" id="delete${index}">Remove</button>
             </div>`;
             team += teamMember;
         });
