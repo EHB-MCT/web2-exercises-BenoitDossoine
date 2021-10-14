@@ -78,9 +78,8 @@ window.onload = function () {
                 document.getElementById("messages").removeAttribute("class");
                 document.getElementById("messages").classList.add("addSucces");
                 for (let item of document.getElementsByClassName("deleteBtn")) {
-                    item.addEventListener("click",()=>deletePokemon(item.id.substring(6)));
+                    item.addEventListener("click", () => deletePokemon(item.id.substring(6)));
                 }
-                // document.getElementsByClassName("deleteBtn").forEach((btn,index) => btn.addEventListener("click",deletePokemon(index)));
             }
         }
 
@@ -94,11 +93,17 @@ window.onload = function () {
         document.getElementById("team").style.display = "none";
         document.getElementById("messages").style.display = "none";
         document.getElementById("pokemonList").style.display = "flex";
+
+        document.getElementById("listLink").style.borderBottom = "2px black solid";
+        document.getElementById("teamLink").style.borderBottom = "none";
     }
 
     function showTeam() {
         document.getElementById("team").style.display = "flex";
         document.getElementById("messages").style.display = "none";
         document.getElementById("pokemonList").style.display = "none";
+
+        document.getElementById("listLink").style.borderBottom = "none";
+        document.getElementById("teamLink").style.borderBottom = "2px black solid";
     }
 };

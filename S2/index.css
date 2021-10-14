@@ -62,10 +62,6 @@ section#team {
     margin-top: 2em;
 }
 
-#team div {
-    text-align: center;
-}
-
 #teamDescription {
     width: 100%;
 }
@@ -115,14 +111,15 @@ p.pokemonName {
 
 .pokemonTypes p {
     width: 40%;
-    margin: 0 2%;
+    margin: 0 2% 0 0;
     padding: 0.2em 0.2em;
     text-align: center;
     text-transform: capitalize;
     border-radius: 15px;
 }
 
-.addBtn {
+.addBtn,
+.deleteBtn {
     display: inline-block;
     border: none;
     border-radius: 15px;
@@ -137,6 +134,7 @@ p.pokemonName {
     cursor: pointer;
     text-align: center;
 }
+
 
 .grass {
     background-color: #71C558;
