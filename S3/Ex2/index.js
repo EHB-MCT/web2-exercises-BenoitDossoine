@@ -1,6 +1,7 @@
 "use strict";
 const baseURL = "http://www.omdbapi.com/?apikey=36d69f6e&"
 window.onload = function () {
+    let timer = 0;
     let form = document.getElementById("searchform");
     form.addEventListener("submit", (e) => searchMovies(e))
 
@@ -9,11 +10,10 @@ window.onload = function () {
         let searchInput = document.getElementById("inputTitle").value;
         let film = getData(`${baseURL}t=${searchInput}`);
         film.then(result => {
-            console.log(result);
+            // console.log(result);
             let html = createFilmTile(result);
             appendToList(html);
             initAddBtns();
-            console.log(document.getElementsByClassName("addBtn")[0].getAttribute("runtime").slice(0, -4));
         })
     }
 
@@ -34,7 +34,7 @@ window.onload = function () {
                     <h6>${movie.Year}</h6>
                     <h6>${movie.Director}</h6>
                     <h7>${movie.Runtime}</h7>
-                    <button type="button" class="btn btn-outline-primary mt-5 addBtn" runtime = "${movie.Runtime}">Add</button>
+                    <button type="button" class="btn btn-outline-primary mt-5 addBtn" data-runtime="${movie.Runtime}">Add</button>
                 </div>
             </div>
         </div>
@@ -49,9 +49,15 @@ window.onload = function () {
         let list = document.getElementById("filmList");
         list.onclick = function (event) {
             if (event.target.type == "button") {
-                console.log("THIS IS A BUTTON");
+                let runTime = parseInt(event.target.getAttribute("data-runtime").slice(0, -4));
+                timer += runTime;
+                updateTimer();
             };
         }
+    }
+
+    function updateTimer() {
+        document.getElementById("counter").innerHTML = timer;
     }
 
 
