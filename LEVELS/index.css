@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+section#loginSection {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(138, 43, 226,0.8);
+}
+
+#loginForm {
+    background-color: white;
+    max-width: 400px;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 12px;
+}
+
+#loginForm input[type="text"],
+#loginForm input[type="email"],
+#loginForm select {
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    padding: 20px 0 6px;
+    display: inline-block;
+    width: 80%;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    margin-top: 20px;
+    margin-left: 10%;
+    margin-bottom: 20px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: flex-start;
+
+}
