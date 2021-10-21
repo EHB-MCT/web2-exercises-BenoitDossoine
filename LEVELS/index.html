@@ -11,12 +11,20 @@
 </head>
 
 <body>
+    <header id="navigation">
+        <ul>
+            <li id="loginNav">Login</li>
+            <li id="profileNav">Profile</li>
+            <li id="leaderboardNav">Leaderboard</li>
+        </ul>
+    </header>
     <section id="loginSection">
         <h1>The LEVELS app</h1>
         <p>Are you ready to take your knowledge to the next LEVEL?</p>
         <form action="" id="loginForm">
             <label for="username">Username</label>
-            <input type="text" name="username" placeholder="This is how people will see you on the app" id="usernameInput">
+            <input type="text" name="username" placeholder="This is how people will see you on the app"
+                id="usernameInput">
             <label for="fullName">Full name</label>
             <input type="text" name="fullName" placeholder="This will remain private" id="fullNameInput">
             <label for="email">School e-mail</label>
@@ -27,6 +35,19 @@
             </select>
             <input type="submit">
         </form>
+    </section>
+    <section id="profilePage">
+        <div id="userCard">
+            <img id="avatarUser" src="./img/empty-avatar.jpg" alt="">
+            <div id="infoUser">
+                <h1>Username</h1>
+                <p id="levelUser">Lvl. 5</p>
+                <p id="questsCompleted"> 4/45 quests completed</p>
+            </div>
+        </div>
+    </section>
+    <section id="leaderboard">
+
     </section>
 </body>
 
