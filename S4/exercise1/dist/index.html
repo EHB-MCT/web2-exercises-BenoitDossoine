@@ -1,11 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Sexy inputs</title>
-  </head>
-  <body>
-    
-   <script src="main.js"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Sexy inputs</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="main.js" type="module"></script>
+
+</head>
+
+<body>
+
+  <form class="mt-3 mx-5" id="form">
+    <div class="row mb-3">
+      <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control student" id="inputName">
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="birthInput" class="col-sm-2 col-form-label">Birth date</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control birthInput" id="birthInput">
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="rrnInput" class="col-sm-2 col-form-label">Rijksregisternummer</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control rrn" id="rrnInput">
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="ageInput" class="col-sm-2 col-form-label">Age</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control age" id="ageInput">
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="phoneInput" class="col-sm-2 col-form-label">Phone number</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control phone" id="phoneInput">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">GO!</button>
+  </form>
+
+  <div class="container" id="cardContainer">
+
+  </div>
+
+</body>
+
 </html>
