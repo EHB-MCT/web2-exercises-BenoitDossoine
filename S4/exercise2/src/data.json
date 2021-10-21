@@ -1,0 +1,33 @@
+{
+
+    "student": "Benoît Dossoine",
+
+    "courses": [{
+            "name": "DEV III",
+            "hype": 5
+        },
+        {
+            "name": "DESIGN III",
+            "hype": -4
+        },
+        {
+            "name": "DEV IV",
+            "hype": 10
+        },
+
+        {
+            "name": "Frontend",
+            "hype": 8
+        },
+
+        {
+            "name": "Backend",
+            "hype": 3
+        },
+
+        {
+            "name": "Full Projects",
+            "hype": 7
+        }
+    ]
+}
