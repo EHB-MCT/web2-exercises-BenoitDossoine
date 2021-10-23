@@ -46,7 +46,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("var _data_json__WEBPACK_IMPORTED_MODULE_1___namespace_cache;\n__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var chart_js_auto__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! chart.js/auto */ \"./node_modules/chart.js/auto/auto.esm.js\");\n/* harmony import */ var _data_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./data.json */ \"./src/data.json\");\n// import Chart from \"../node_modules/chart.js/dist/chart.js\";\r\n\r\n\r\n\r\n\r\nlet ctx = document.getElementById('hypeChart').getContext('2d');\r\n\r\nconsole.log(/*#__PURE__*/ (_data_json__WEBPACK_IMPORTED_MODULE_1___namespace_cache || (_data_json__WEBPACK_IMPORTED_MODULE_1___namespace_cache = __webpack_require__.t(_data_json__WEBPACK_IMPORTED_MODULE_1__, 2))));\r\n\r\nlet hypeChart = new chart_js_auto__WEBPACK_IMPORTED_MODULE_0__[\"default\"](ctx, {\r\n    type: 'bar',\r\n    data: {\r\n        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],\r\n        datasets: [{\r\n            label: '# of Votes',\r\n            data: [12, 19, 3, 5, 2, 3],\r\n            backgroundColor: [\r\n                'rgba(255, 99, 132, 0.2)',\r\n                'rgba(54, 162, 235, 0.2)',\r\n                'rgba(255, 206, 86, 0.2)',\r\n                'rgba(75, 192, 192, 0.2)',\r\n                'rgba(153, 102, 255, 0.2)',\r\n                'rgba(255, 159, 64, 0.2)'\r\n            ],\r\n            borderColor: [\r\n                'rgba(255, 99, 132, 1)',\r\n                'rgba(54, 162, 235, 1)',\r\n                'rgba(255, 206, 86, 1)',\r\n                'rgba(75, 192, 192, 1)',\r\n                'rgba(153, 102, 255, 1)',\r\n                'rgba(255, 159, 64, 1)'\r\n            ],\r\n            borderWidth: 1\r\n        }]\r\n    },\r\n    options: {\r\n        scales: {\r\n            y: {\r\n                beginAtZero: true\r\n            }\r\n        }\r\n    }\r\n});\n\n//# sourceURL=webpack://exercise2/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var chart_js_auto__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! chart.js/auto */ \"./node_modules/chart.js/auto/auto.esm.js\");\n/* harmony import */ var _data_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./data.json */ \"./src/data.json\");\n// import Chart from \"../node_modules/chart.js/dist/chart.js\";\r\n\r\n\r\n\r\n\r\nlet ctx = document.getElementById('hypeChart').getContext('2d');\r\n\r\nlet labels = [];\r\nlet hypeLevels = [];\r\n\r\n_data_json__WEBPACK_IMPORTED_MODULE_1__.courses.forEach(function (course, index) {\r\n    labels.push(course.name);\r\n    hypeLevels.push(course.hype);\r\n})\r\n\r\nlet hypeChart = new chart_js_auto__WEBPACK_IMPORTED_MODULE_0__[\"default\"](ctx, {\r\n    type: 'bar',\r\n    data: {\r\n        labels: labels,\r\n        datasets: [{\r\n            label: `Hype levels of ${_data_json__WEBPACK_IMPORTED_MODULE_1__.student}`,\r\n            data: hypeLevels,\r\n            backgroundColor: [\r\n                'rgba(255, 99, 132, 0.2)',\r\n                'rgba(54, 162, 235, 0.2)',\r\n                'rgba(255, 206, 86, 0.2)',\r\n                'rgba(75, 192, 192, 0.2)',\r\n                'rgba(153, 102, 255, 0.2)',\r\n                'rgba(255, 159, 64, 0.2)'\r\n            ],\r\n            borderColor: [\r\n                'rgba(255, 99, 132, 1)',\r\n                'rgba(54, 162, 235, 1)',\r\n                'rgba(255, 206, 86, 1)',\r\n                'rgba(75, 192, 192, 1)',\r\n                'rgba(153, 102, 255, 1)',\r\n                'rgba(255, 159, 64, 1)'\r\n            ],\r\n            borderWidth: 1\r\n        }]\r\n    },\r\n    options: {\r\n        scales: {\r\n            y: {\r\n                beginAtZero: true\r\n            }\r\n        }\r\n    }\r\n});\n\n//# sourceURL=webpack://exercise2/./src/index.js?");
 
 /***/ }),
 
@@ -87,36 +87,6 @@ eval("module.exports = JSON.parse('{\"student\":\"Benoît Dossoine\",\"courses\"
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/create fake namespace object */
-/******/ 	(() => {
-/******/ 		var getProto = Object.getPrototypeOf ? (obj) => (Object.getPrototypeOf(obj)) : (obj) => (obj.__proto__);
-/******/ 		var leafPrototypes;
-/******/ 		// create a fake namespace object
-/******/ 		// mode & 1: value is a module id, require it
-/******/ 		// mode & 2: merge all properties of value into the ns
-/******/ 		// mode & 4: return value when already ns object
-/******/ 		// mode & 16: return value when it's Promise-like
-/******/ 		// mode & 8|1: behave like require
-/******/ 		__webpack_require__.t = function(value, mode) {
-/******/ 			if(mode & 1) value = this(value);
-/******/ 			if(mode & 8) return value;
-/******/ 			if(typeof value === 'object' && value) {
-/******/ 				if((mode & 4) && value.__esModule) return value;
-/******/ 				if((mode & 16) && typeof value.then === 'function') return value;
-/******/ 			}
-/******/ 			var ns = Object.create(null);
-/******/ 			__webpack_require__.r(ns);
-/******/ 			var def = {};
-/******/ 			leafPrototypes = leafPrototypes || [null, getProto({}), getProto([]), getProto(getProto)];
-/******/ 			for(var current = mode & 2 && value; typeof current == 'object' && !~leafPrototypes.indexOf(current); current = getProto(current)) {
-/******/ 				Object.getOwnPropertyNames(current).forEach((key) => (def[key] = () => (value[key])));
-/******/ 			}
-/******/ 			def['default'] = () => (value);
-/******/ 			__webpack_require__.d(ns, def);
-/******/ 			return ns;
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports

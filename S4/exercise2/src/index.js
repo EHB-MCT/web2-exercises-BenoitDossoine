@@ -5,15 +5,21 @@ import * as data from "./data.json";
 
 let ctx = document.getElementById('hypeChart').getContext('2d');
 
-console.log(data);
+let labels = [];
+let hypeLevels = [];
+
+data.courses.forEach(function (course, index) {
+    labels.push(course.name);
+    hypeLevels.push(course.hype);
+})
 
 let hypeChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: labels,
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            label: `Hype levels of ${data.student}`,
+            data: hypeLevels,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
