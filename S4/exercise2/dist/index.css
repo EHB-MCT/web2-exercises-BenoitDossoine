@@ -1,0 +1,10 @@
+* {
+    font-family: sans-serif;
+}
+
+h1 {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
