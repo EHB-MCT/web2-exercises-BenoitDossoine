@@ -5,23 +5,29 @@ const baseURL = "http://www.omdbapi.com/?apikey=36d69f6e&"
 window.onload = function () {
     let timer = 0;
     let form = document.getElementById("searchform");
-    form.addEventListener("submit", (e) => searchMovies(e))
+    let searchInput = document.getElementById("inputTitle");
+    // form.addEventListener("submit", (e) => searchMovies(e))
+
+    searchInput.addEventListener('input', (e) => searchMovies(e));
 
     function searchMovies(e) {
         e.preventDefault();
         let searchInput = document.getElementById("inputTitle").value;
         let film = getData(`${baseURL}s=${searchInput}`);
         film.then(result => {
-            createFilmList(result.Search);
-        })
+                if (result.Response == 'True') {
+                    createFilmList(result.Search);
+                }
+            })
     }
 
     async function getData(url) {
-        let data = await fetch(url)
+        let data = await fetch(url);
         return await data.json();
     }
 
     function createFilmList(listArray) {
+
         document.getElementById("filmList").innerHTML = ""
         listArray.forEach((element) => {
             let html = createFilmTile(element);
