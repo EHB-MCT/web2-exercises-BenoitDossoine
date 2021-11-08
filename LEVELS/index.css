@@ -10,7 +10,7 @@ body {
 #navigation {
     position: absolute;
 
-    display: flex;
+    display: none;
     flex-direction: row;
     flex-wrap: wrap;
 
@@ -30,12 +30,11 @@ body {
     font-weight: 200;
     text-transform: uppercase;
 
+    margin: 0 20px;
     cursor: pointer;
 }
 
-#navigation>ul>li:nth-child(2) {
-    margin: 0 40px;
-}
+
 
 
 section#loginSection {
@@ -64,6 +63,7 @@ section#loginSection {
 
 #loginForm input[type="text"],
 #loginForm input[type="email"],
+#loginForm input[type="password"],
 #loginForm select {
     width: 80%;
     padding: 12px;
