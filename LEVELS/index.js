@@ -2,11 +2,12 @@
 import User from "./User.js";
 
 let users = [];
-window.onload = function () {
+window.onload = async function () {
     let navigation = document.getElementById("navigation");
     navigation.addEventListener("click", (event) => {
         displayPage(event.target);
     })
+
     let loginForm = document.getElementById("loginForm");
     loginForm.addEventListener("submit", (event) => {
         event.preventDefault();
@@ -18,6 +19,11 @@ window.onload = function () {
 
         createStudent(userName, fullName, email, course, password);
     })
+
+    let questsData = await getQuests();
+
+    let moduleButtonsContainer = document.getElementById("questModuleButtons");
+    moduleButtonsContainer.addEventListener("click", (event) => showModuleQuests(event.target, questsData));
 }
 
 function displayPage(target) {
@@ -47,4 +53,18 @@ function createStudent(userName, fullName, email, course, password) {
     document.getElementById("profileSection").style.display = "flex";
     document.getElementById("navigation").style.display = "flex";
 
+}
+
+function showModuleQuests(target, questsData) {
+    if (target.getAttribute("data-sessionId")) {
+        let sessionId = target.getAttribute("data-sessionId");
+        console.log(questsData.quests);
+    }
+}
+
+async function getQuests() {
+    let data = await fetch("./questlog.json")
+        .then(response => response.json())
+        .then(data => data);
+    return data;
 }
